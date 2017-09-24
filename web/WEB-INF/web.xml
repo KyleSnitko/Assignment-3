@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <servlet>
+        <servlet-name>NewCustomerServ</servlet-name>
+        <servlet-class>user.NewCustomerServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NewCustomerServ</servlet-name>
+        <url-pattern>/newcust</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>login.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>        
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>password_reset</servlet-name>
+        <servlet-class>login.password_reset</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>password_reset</servlet-name>
+        <url-pattern>/reset</url-pattern>        
+    </servlet-mapping>
+    
+
+
+<error-page>
+    <error-code>404</error-code>
+    <location>/error_404.jsp</location>
+</error-page>
+
+<error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error_java.jsp</location>
+</error-page>
+
+<session-config>
+    <session-timout>30</session-timout>
+</session-config>
+
+</web-app>
